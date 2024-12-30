@@ -44,7 +44,7 @@ export function Carousel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 8000); 
+    }, 8000);
     return () => clearInterval(timer);
   }, []);
 
@@ -73,14 +73,14 @@ export function Carousel() {
             priority={index === 0}
           />
           <div className="absolute inset-0 bg-black/20" />
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="text-center text-white">
               <h2 className="text-5xl md:text-6xl font-serif mb-4 font-uchen">{slide.title}</h2>
               <p className="text-xl mb-8 font-uchen">{slide.description}</p>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="text-white border-2 border-white bg-transparent hover:bg-white hover:text-black hover:border-black font-uchen text-lg rounded-md transition-all ease-in-out duration-300"
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-white border-2 border-white bg-transparent font-uchen text-lg rounded-md transition-colors duration-300 hover:bg-white hover:text-black hover:border-black z-20"
               >
                 Shop Now
               </Button>
@@ -88,11 +88,11 @@ export function Carousel() {
           </div>
         </div>
       ))}
-      
+
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-white"
+        className="absolute left-4 top-1/2 -translate-y-1/2 text-white z-30"
         onClick={prevSlide}
       >
         <ChevronLeft className="h-8 w-8" />
@@ -100,13 +100,13 @@ export function Carousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-white"
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-white z-30"
         onClick={nextSlide}
       >
         <ChevronRight className="h-8 w-8" />
       </Button>
-      
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
         {slides.map((_, index) => (
           <button
             key={index}

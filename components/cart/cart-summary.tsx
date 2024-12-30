@@ -11,25 +11,27 @@ export function CartSummary() {
   const total = subtotal + shipping;
 
   return (
-    <Card className="p-6">
-      <h2 className="text-xl font-medium mb-4">Order Summary</h2>
-      <div className="space-y-2 mb-4">
-        <div className="flex justify-between">
+    <Card className="p-6 rounded-xl shadow-xl border bg-white">
+      <h2 className="text-2xl font-semibold text-gray-900 mb-8">Order Summary</h2>
+      <div className="space-y-6">
+        <div className="flex justify-between items-center text-lg text-gray-700">
           <span>Subtotal</span>
-          <span>${subtotal.toFixed(2)}</span>
+          <span className="font-medium">${subtotal.toFixed(2)}</span>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center text-lg text-gray-700">
           <span>Shipping</span>
-          <span>${shipping.toFixed(2)}</span>
+          <span className="font-medium">${shipping.toFixed(2)}</span>
         </div>
-        <div className="border-t pt-2 mt-2">
-          <div className="flex justify-between font-medium">
+        <div className="border-t pt-4 mt-6">
+          <div className="flex justify-between items-center text-xl font-semibold text-gray-900">
             <span>Total</span>
-            <span>${total.toFixed(2)}</span>
+            <span className="font-bold text-green-600">${total.toFixed(2)}</span>
           </div>
         </div>
       </div>
-      <Button className="w-full">Proceed to Checkout</Button>
+      <Button className="w-full py-3 mt-8 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300 ease-in-out">
+        Proceed to Checkout
+      </Button>
     </Card>
   );
 }

@@ -20,7 +20,6 @@ export default function Home() {
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-serif mb-8 text-center">Top Favs of the Town!</h2>
         <br />
-     
         <ProductGrid />
       </section>
 
@@ -76,8 +75,8 @@ export default function Home() {
               },
             ].map((feature, index) => (
               <div key={feature.title} className="text-center">
-                <h3 className="text-2xl font-large mb-4">{feature.title}</h3>
-                <p className="text-gray-1000 max-w-md mx-auto">{feature.description}</p>
+                <h3 className="text-2xl font-medium mb-4">{feature.title}</h3>
+                <p className="text-lg text-gray-700">{feature.description}</p>
                 {index === 1 && <br />}
                 {index === 1 && <br />}
               </div>
@@ -87,39 +86,38 @@ export default function Home() {
       </section>
 
       {/* CUSTOMER REVIEWS SECTION */}
-        <section className="bg-muted py-16">
-    <div className="container mx-auto px-4 text-center">
-      <h2 className="text-3xl font-serif mb-12 text-green-800">What Our Customers Say</h2>
-      <div className="grid md:grid-cols-3 gap-8">
-        {[{ 
-          quote: "This is the best plant shop I have ever come across. The quality is unmatched!", 
-          name: "Emily R.", 
-          avatar: "https://randomuser.me/api/portraits/women/45.jpg" 
-        },
-        { 
-          quote: "My indoor space feels so much more alive thanks to their amazing collection.", 
-          name: "Michael K.", 
-          avatar: "https://randomuser.me/api/portraits/men/32.jpg" 
-        },
-        { 
-          quote: "Fast delivery and healthy plants. I'm beyond impressed!", 
-          name: "Sophia L.", 
-          avatar: "https://randomuser.me/api/portraits/women/21.jpg" 
-        }]
-        .map((testimonial, index) => (
-          <div key={index} className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
-            <div className="flex justify-center mb-6">
-              <img src={testimonial.avatar} alt={testimonial.name} className="w-16 h-16 rounded-full object-cover border-4 border-green-500" />
-            </div>
-            <p className="italic text-lg text-gray-700 mb-4">“{testimonial.quote}”</p>
-            <h4 className="font-medium text-xl text-green-700">{testimonial.name}</h4>
+      <section className="bg-muted py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-serif mb-12 text-green-800">What Our Plant Parents Say...</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { 
+                quote: "This plant shop is fantastic. The quality of the plants is really impressive.", 
+                name: "~ Brinda Shenoy", 
+                avatar: "/images/testi1.jpg" 
+              },
+              { 
+                quote: "Stumbled upon this plant shop and, a total gem. The quality? Absolutely unmatched!", 
+                name: "~ Michael R", 
+                avatar: "/images/testi2.jpg" 
+              },
+              { 
+                quote: "The atmosphere in this plant shop is so calming. Very aesthetic too.", 
+                name: "~ Joyce Kate", 
+                avatar: "/images/testi3.jpg" 
+              }
+            ].map((testimonial, index) => (
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                <div className="flex justify-center mb-6">
+                  <img src={testimonial.avatar} alt={testimonial.name} className="w-16 h-16 rounded-full object-cover border-4 border-green-500" />
+                </div>
+                <p className="italic text-lg text-gray-700 mb-4">“{testimonial.quote}”</p>
+                <h4 className="font-medium text-xl text-green-700">{testimonial.name}</h4>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-
+        </div>
+      </section>
 
       {/* NEWSLETTER SECTION */}
       <section className="bg-muted py-16">
@@ -132,7 +130,7 @@ export default function Home() {
               placeholder="Your email address"
               className="p-4 w-full max-w-md rounded-lg border border-muted-foreground text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
-            <Button type="submit" size="lg" className="font-serif bg-green-900 text-white hover:bg-green-700">
+            <Button type="submit" size="lg" className="font-serif bg-green-900 text-white hover:bg-green-700 text-[20px]">
               Subscribe
             </Button>
           </form>

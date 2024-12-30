@@ -30,31 +30,34 @@ const guides = [
 
 export function CareGuideGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       {guides.map((guide) => (
-        <Card key={guide.id}>
-          <CardContent className="p-6">
-            <div className="relative aspect-square mb-4 rounded-lg overflow-hidden">
+        <Card
+          key={guide.id}
+          className="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out"
+        >
+          <CardContent className="p-6 space-y-4">
+            <div className="relative w-full h-60 mb-4 rounded-xl overflow-hidden">
               <Image
                 src={guide.image}
                 alt={guide.name}
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <h3 className="text-xl font-medium mb-4">{guide.name}</h3>
-            <div className="space-y-2 text-sm">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-2">{guide.name}</h3>
+            <div className="space-y-2 text-sm text-gray-700">
               <p>
-                <span className="font-medium">Difficulty:</span>{" "}
-                <span className="text-gray-600">{guide.difficulty}</span>
+                <span className="font-medium text-gray-900">Difficulty:</span>{" "}
+                {guide.difficulty}
               </p>
               <p>
-                <span className="font-medium">Light:</span>{" "}
-                <span className="text-gray-600">{guide.light}</span>
+                <span className="font-medium text-gray-900">Light:</span>{" "}
+                {guide.light}
               </p>
               <p>
-                <span className="font-medium">Water:</span>{" "}
-                <span className="text-gray-600">{guide.water}</span>
+                <span className="font-medium text-gray-900">Water:</span>{" "}
+                {guide.water}
               </p>
             </div>
           </CardContent>

@@ -52,10 +52,10 @@ export function Footer() {
 
           {/* Contact Section */}
           <div>
-            <h4 className="font-medium text-xl text-green-700 mb-4">Contact</h4>
+            <h4 className="font-medium text-xl text-green-700 mb-4">Leafy Abode</h4>
             <ul className="space-y-2">
-              <li className="text-sm text-gray-600">2468 Flora Crescent, Street Crimson Hedrid TYI</li>
-              <li className="text-sm text-gray-600">Verdura Valley, VV 10293, Hannis</li>
+              <li className="text-sm text-gray-600">2468 GrootWood Lane, Brookyln Street 616, </li>
+              <li className="text-sm text-gray-600">Xandar District, VVest Asgard, NYC</li>
               <li className="text-sm text-gray-600">sayhiplants@terrene.com</li>
             </ul>
           </div>
@@ -64,10 +64,11 @@ export function Footer() {
         {/* Footer Bottom */}
         <div className="border-t mt-8 pt-8">
           <p className="text-sm text-gray-600 text-center">
-            © {new Date().getFullYear()} <span className="font-semibold text-green-700">Terrene</span>. All rights reserved.
+           <span className="font-medium text-black">Terrene. [2024] / All rights reserved © </span>.
           </p>
         </div>
       </div>
     </footer>
   );
 }
+export default Footer;
